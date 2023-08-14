@@ -1,0 +1,22 @@
+﻿@using MobilyaMagazasi_Crud_MVC.Data
+@model Mobilya
+
+@{
+    ViewBag.Title = "Mobilya Ekle";
+}
+
+
+<form asp-controller="Mobilya" asp-action="Add" method="post">
+
+    <label asp-for="Name" class="form-label ms-1">Mobilya Adı</label>
+    <input asp-for="Name" class="form-control"  type="text" value="" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+    <label asp-for="Stock" class="form-label ms-1"></label>
+    <input asp-for="Stock" class="form-control" type="text" value="1" />
+    <span asp-validation-for="Stock" class="text-danger"></span>
+
+    <button class="btn btn-outline-success mt-3 w-25">Ekle</button>
+    <a asp-action="Index" class="btn btn-outline-secondary mt-3 w-25" >Vazgeç</a>
+
+</form>

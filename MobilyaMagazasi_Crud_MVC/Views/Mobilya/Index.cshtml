@@ -1,0 +1,38 @@
+﻿@using MobilyaMagazasi_Crud_MVC.Data
+@model List<Mobilya>
+@{
+    ViewBag.Title = "Mobilya Listesi";
+}
+
+
+<h1>Mobilya Listesi</h1>
+
+<table class="table table-hover table-striped">
+
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Mobilya Türü</td>
+            <td>Stok Adedi</td>
+            <td></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (Mobilya mobilya in Model)
+            {
+                <tr>
+                    <td>@mobilya.Id</td>
+                    <td>@mobilya.Name</td>
+                    <td>@mobilya.Stock</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@mobilya.Id" class="btn btn-danger text-white">Sil</a>
+                        <a asp-action="Edit" asp-route-id="@mobilya.Id" class="btn btn-warning text-white">Düzenle</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
